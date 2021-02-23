@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="gameList">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="game" type="game"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="game">
+        <xs:sequence>
+            <xs:element name="path" type="xs:string" />
+            <xs:element name="name" type="xs:string" />
+            <xs:element name="thumbnail" type="xs:string" />
+            <xs:element name="image" type="xs:string" />
+            <xs:element name="marquee" type="xs:string" />
+            <xs:element name="video" type="xs:string" />
+            <xs:element name="rating" type="xs:string" />
+            <xs:element name="desc" type="xs:string" />
+            <xs:element name="releasedate" type="xs:string" />
+            <xs:element name="developer" type="xs:string" />
+            <xs:element name="publisher" type="xs:string" />
+            <xs:element name="genre" type="xs:string" />
+            <xs:element name="players" type="xs:string" />
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>
