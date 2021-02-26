@@ -1,16 +1,27 @@
-package eu.mschuette.psx.rommanager;
+package eu.mschuette.psx.rommanager.model;
 
-import java.util.ArrayList;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
+
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Objects;
 
 public class GameList extends LinkedList<Game> {
-//    private List<Game> games;
-//
-//    public GameList() {
-//        games = new ArrayList<>();
-//    }
+    private Document gamelistXml;
+
+    public GameList(Document gamelistXml) {
+        this.gamelistXml = gamelistXml;
+    }
+
+    public List<Game> getGames() {
+        NodeList games = gamelistXml.getElementsByTagName("game");
+        List<Game> list = new LinkedList<>();
+        for(int i = 0; i < games.getLength(); i++) {
+            list.add(new Game((Element) games.item(i)));
+        }
+        return list;
+    }
 //
 //    public GameList(List<Game> games) {
 //        this.games = games;

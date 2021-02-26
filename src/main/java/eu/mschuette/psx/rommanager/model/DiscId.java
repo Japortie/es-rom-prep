@@ -1,4 +1,4 @@
-package eu.mschuette.psx.rommanager;
+package eu.mschuette.psx.rommanager.model;
 
 public class DiscId {
     private String id;
@@ -12,7 +12,8 @@ public class DiscId {
     }
 
     public String getPretty() {
-        return id.replace("-", "")
+        return id.replace("\\","")
+                .replace("-", "")
                 .replace(";", "")
                 .replace("_", "")
                 .replace(".", "")
